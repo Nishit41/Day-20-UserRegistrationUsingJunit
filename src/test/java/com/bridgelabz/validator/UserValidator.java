@@ -13,7 +13,7 @@ public class UserValidator {
         Assertions.assertEquals(true,result);
     }
     @Test
-    void givenFirstName_WhwnNotProper_ShouldReturnFalse(){
+    void givenLastName_WhwnNotProper_ShouldReturnFalse(){
         Verify verify = new Verify();
         boolean result = verify.validateFirstName("Nis");
         Assertions.assertEquals(false,result);
@@ -21,9 +21,17 @@ public class UserValidator {
     @Test
     void givenLastName_WhwnNotProper_ShouldReturnTrue(){
         Verify verify = new Verify();
-        boolean result = verify.validateLastName("Mahato");
+        boolean result = verify.validateLastName("Ranjan");
         Assertions.assertEquals(true,result);
     }
-
+    //       E.g. abc.xyz@bl.co.in\n" +
+    //       Email has 3 mandatory parts (abc, bl & co) and 2 optional (xyz & in)\n" +
+    //       with precise @ and . positions\n" +
+    @Test
+    void givenEmailAddress_WhenProper_ShouldReturnTrue(){
+        Verify verify = new Verify();
+        boolean result = verify.validateEmailAddress("abc.xyz@bl.co.in");
+        Assertions.assertEquals(true,result);
+    }
 
 }
