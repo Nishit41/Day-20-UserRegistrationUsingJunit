@@ -12,5 +12,18 @@ public class UserValidator {
         boolean result = verify.validateFirstName("Nishit");
         Assertions.assertEquals(true,result);
     }
+    @Test
+    void givenFirstName_WhwnNotProper_ShouldReturnFalse(){
+        Verify verify = new Verify();
+        boolean result = verify.validateFirstName("Nis");
+        Assertions.assertEquals(false,result);
+    }
+    @Test
+    void givenLastName_WhwnNotProper_ShouldReturnTrue(){
+        Verify verify = new Verify();
+        boolean result = verify.validateLastName("Mahato");
+        Assertions.assertEquals(true,result);
+    }
+
 
 }
