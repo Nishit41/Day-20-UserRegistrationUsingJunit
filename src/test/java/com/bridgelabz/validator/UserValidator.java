@@ -33,5 +33,10 @@ public class UserValidator {
         boolean result = verify.validateEmailAddress("abc.xyz@bl.co.in");
         Assertions.assertEquals(true,result);
     }
-
+    @Test
+    void givenPhoneNumber_WhenProper_ShouldReturnTrue(){
+        Verify verify = new Verify();
+        boolean result = verify.validPhoneNumber("+91 9304264509");
+        Assertions.assertEquals(true,result);
+    }
 }
