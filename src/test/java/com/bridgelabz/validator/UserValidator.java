@@ -7,13 +7,13 @@ import javax.xml.validation.Validator;
 
 public class UserValidator {
     @Test
-     void givenFirstName_WhwnProper_ShouldReturnTrue(){
+     void givenFirstName_WhenProper_ShouldReturnTrue(){
         Verify verify = new Verify();
         boolean result = verify.validateFirstName("Nishit");
         Assertions.assertEquals(true,result);
     }
     @Test
-    void givenLastName_WhwnNotProper_ShouldReturnFalse(){
+    void givenLastName_WhenNotProper_ShouldReturnFalse(){
         Verify verify = new Verify();
         boolean result = verify.validateFirstName("Nis");
         Assertions.assertEquals(false,result);
@@ -37,6 +37,12 @@ public class UserValidator {
     void givenPhoneNumber_WhenProper_ShouldReturnTrue(){
         Verify verify = new Verify();
         boolean result = verify.validPhoneNumber("+91 9304264509");
+        Assertions.assertEquals(true,result);
+    }
+    @Test
+    void givenPassword_WhenProper_ShouldReturnTrue(){
+        Verify verify = new Verify();
+        boolean result = verify.validPassword("Ranjan@#2004");
         Assertions.assertEquals(true,result);
     }
 }
